@@ -37,14 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.3)
-      execjs
-      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
     coffee-rails (4.1.1)
@@ -73,6 +67,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.97.5)
+      sass (~> 3.3)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -148,11 +144,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  materialize-sass
   pg (~> 0.15)
   rails (= 4.2.5.1)
   sass-rails (~> 5.0)

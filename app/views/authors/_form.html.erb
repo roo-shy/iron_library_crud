@@ -1,0 +1,48 @@
+<% if @author.errors.any? %>
+  <%= pluralize(@author.errors.count, 'error') %>
+  <ul class="mdl-list">
+    <% @author.errors.full_messages.each do |msg| %>
+      <li class="mdl-list__item"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @author do |f| %>
+
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :first_name, class: "mdl-textfield__input" %>
+  <% if @author.errors[:first_name].any? %>
+    <span class="error-text">* <%= @author.errors[:name].join(", ") %> </span>
+  <% end %>
+  <%= f.label :first_name, class: "mdl-textfield__label" %>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :last_name, class: "mdl-textfield__input" %>
+  <% if @author.errors[:last_name].any? %>
+    <span class="error-text">* <%= @author.errors[:name].join(", ") %> </span>
+  <% end %>
+  <%= f.label :last_name, class: "mdl-textfield__label" %>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :bio, class: "mdl-textfield__input" %>
+  <% if @author.errors[:bio].any? %>
+    <span class="error-text">* <%= @author.errors[:bio].join(", ") %> </span>
+  <% end %>
+  <%= f.label :bio, class: "mdl-textfield__label" %>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :photo_url, class: "mdl-textfield__input" %>
+  <% if @author.errors[:photo_url].any? %>
+    <span class="error-text">* <%= @author.errors[:photo_url].join(", ") %> </span>
+  <% end %>
+  <%= f.label :photo_url, class: "mdl-textfield__label" %>
+</div>
+
+<div class="submit">
+  <%= f.submit class: "waves-effect waves-light btn" %>
+</div>
+
+<% end %>
