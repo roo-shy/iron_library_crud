@@ -1,0 +1,24 @@
+@import "materialize/components/color";
+@import "materialize/extras/nouislider";
+@import "materialize";
+@import 'books';
+
+
+$primary-color:#26A69A;
+
+.nav-wrapper{
+ background-color: $primary-color;
+  a{
+    padding-left: 20px;
+    font-size: 20px;
+  }
+}
+
+.responsive-img{
+  display: flex;
+  padding:20px;
+}
+
+.material-icons {
+text-rendering: optimizeLegibility;
+}

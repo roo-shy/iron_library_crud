@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book List</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="http://localhost:3000/#" class="brand-logo">Iron Library</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to 'Book List', books_path %></li>
+          <li><%= link_to 'New Book', new_book_path %></li>
+          <li><%= link_to 'Author List', authors_path %></li>
+          <li><%= link_to 'New Author', new_author_path %></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="column">
+
+      <div class="row">
+        <div class="col m6">
+          <h1>New Book</h1>
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
