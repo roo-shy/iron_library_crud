@@ -14,9 +14,14 @@ $primary-color:#26A69A;
   }
 }
 
-.responsive-img{
-  display: flex;
-  padding:20px;
+.container{
+}
+
+.img{
+  margin-top: -100px;
+  width:1800px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .material-icons {
