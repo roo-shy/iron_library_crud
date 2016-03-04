@@ -20,6 +20,7 @@ class AuthorsController < ApplicationController
     @author.first_name = params[:author][:first_name]
     @author.last_name = params[:author][:last_name]
     @author.bio = params[:author][:bio]
+    @author.photo_url = params[:author][:photo_url]
 
     if @author.save
       redirect_to authors_path
@@ -33,6 +34,7 @@ class AuthorsController < ApplicationController
    @author.first_name = params[:author][:first_name]
    @author.last_name = params[:author][:last_name]
    @author.bio = params[:author][:bio]
+   @author.photo_url = params[:author][:photo_url]
 
 
     if @author.save
