@@ -15,7 +15,7 @@
             <span class="card-title"><%= @book.title %></span>
             </div>
             <div class="card-content">
-                 <h2><%= link_to @book.author.full_name, author_path(id: @book.author_id) %></h2>
+                 <h2><%= link_to @book.author.first_name, author_path(id: @book.author.id) %></h2>
                   <p><%= @book.author.bio %></p>
             </div>
             <div class="card-action">

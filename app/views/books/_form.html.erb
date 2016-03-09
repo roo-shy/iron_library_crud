@@ -34,11 +34,11 @@
 </div>
 
 <div class="mdl-textfield mdl-js-textfield">
-<%= f.text_field :author,  class: "mdl-textfield__input"%>
-<% if @book.errors[:author].any? %>
-  <span class="error-text">* <%= @book.errors[:author].join(", ") %> </span>
+<%= f.text_field :author_id,  class: "mdl-textfield__input"%>
+<% if @book.errors[:author_id].any? %>
+  <span class="error-text">* <%= @book.errors[:author_id].join(", ") %> </span>
 <% end %>
-  <%= f.label :author, class: "mdl-textfield__label" %>
+  <%= f.label :author_id, class: "mdl-textfield__label" %>
 </div>
 
 <div class="submit">
