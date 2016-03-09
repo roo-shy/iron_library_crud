@@ -13,7 +13,7 @@ class AddNewBookTest < Capybara::Rails::TestCase
       fill_in "Title", with: "Diary of a Whimpy Kid"
       fill_in "Price", with: 8.51
       fill_in "Photo url", with: "www.google.com"
-      fill_in "Author", with: 10
+      fill_in "Author", with: 1
       click_button "Create Book"
     end
     visit root_path

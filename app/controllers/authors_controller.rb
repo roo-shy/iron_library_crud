@@ -38,7 +38,7 @@ class AuthorsController < ApplicationController
 
 
     if @author.save
-      redirect_to author_path(id: @author.id)
+      redirect_to authors_path(id: @author.id)
     else
       render :edit
    end
