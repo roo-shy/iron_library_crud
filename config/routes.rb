@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'authors/:id/edit' => 'authors#edit', as: :edit_author
   post 'authors' => 'authors#create'
   patch 'authors/:id' => 'authors#update'
-  delete 'authors/:id' => 'authors#update'
+  delete 'authors/:id' => 'authors#delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

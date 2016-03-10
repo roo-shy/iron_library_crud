@@ -30,6 +30,7 @@ class BooksController < ApplicationController
     end
 
     def update
+
         @book = Book.find_by id: params[:id]
         @book.title = params[:book][:title]
         @book.author_id = params[:book][:author_id]
@@ -48,7 +49,7 @@ class BooksController < ApplicationController
         @book.destroy
         redirect_to books_path
 
-      end
+    end
 
 
 end
