@@ -19,7 +19,7 @@
             <div class="mdl-card__actions mdl-card--border">
               <strong style="padding-right: 10px;">
                 <%= number_to_currency(book.price) %></strong>
-              <%= link_to book.author.full_name, book_path(id: book.id), class: "waves-effect waves-light btn" %>
+               <%= link_to 'Edit', edit_book_path(id: book.id), class: "waves-effect waves-light btn" %>
             </div>
           </div>
         </div>

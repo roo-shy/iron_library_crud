@@ -37,7 +37,7 @@ class BooksController < ApplicationController
         @book.photo_url = params[:book][:photo_url]
 
         if @book.save
-          redirect_to book_path
+          redirect_to books_path
         else
           render :edit
         end
@@ -46,9 +46,8 @@ class BooksController < ApplicationController
       def delete
         @book = Book.find_by id: params[:id]
         @book.destroy
-        redirect_to root_path
-       else
-        render :edit
+        redirect_to books_path
+
       end
 
 

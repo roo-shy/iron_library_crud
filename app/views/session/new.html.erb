@@ -1,0 +1,28 @@
+<div class="container">
+
+</div>
+<div class="row">
+  <div class="col s12 m5">
+
+      <h1>Sign In</h1>
+      <%= form_tag do %>
+        <div class="">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+
+
+        <%= submit_tag "Sign In", class: "waves-effect waves-light btn" %>
+
+        or
+        <%= link_to 'Sign Up', new_user_path, class: "waves-effect waves-light btn" %>
+
+      <% end %>
+
+  </div>
+</div>
+</div>
