@@ -1,4 +1,13 @@
 class BooksController < ApplicationController
+
+  before_action do
+
+  @current_user = User.find_by id: session[:user_id]
+  if @current_user.blank?
+    redirect_to sign_in_path
+  end
+end
+
   def index
     @books = Book.all
   end
@@ -39,8 +48,7 @@ class BooksController < ApplicationController
 
         if @book.save
           redirect_to books_path
-        else
-          render :edit
+
         end
       end
 

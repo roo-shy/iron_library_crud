@@ -1,0 +1,43 @@
+<div class="demo-container mdl-grid">
+
+
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+
+  </div>
+
+  <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+    <h1>New User Registration</h1>
+
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, 'error') %> prevented your form from success.
+      <ul class="mdl-list">
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="mdl-list__item"><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+
+    <%= form_for @user do |f| %>
+      <div class="">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="">
+        <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
