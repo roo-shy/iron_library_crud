@@ -7,12 +7,12 @@ class CanSignUpTest < Capybara::Rails::TestCase
     visit root_path
     click_link "Book List"
 
-    within("#new_user") do
-      fill_in "Email", with: "bob@example.com"
-      fill_in "Password", with: "12345678"
-      fill_in "Name", with: "Bob"
-      click_button "Create User"
+    within("#register") do
+    fill_in "Name", with: "Bob"
+    fill_in "Email", with: "bob@example.com"
+    fill_in "Password", with: "12345678"
+    click_button "Create User"
     end
-
+     assert_content page, "Sign In"
   end
 end
