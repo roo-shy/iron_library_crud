@@ -38,6 +38,10 @@ end
       end
     end
 
+    def user_params
+      params.require(:user).permit(:profile_image)
+    end
+    
     def update
 
         @book = Book.find_by id: params[:id]

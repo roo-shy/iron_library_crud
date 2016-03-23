@@ -25,13 +25,13 @@
   <%= f.label :price, class: "mdl-textfield__label" %>
 </div>
 
-<div class="mdl-textfield mdl-js-textfield">
+<!-- <div class="mdl-textfield mdl-js-textfield">
   <%= f.text_field :photo_url, class: "mdl-textfield__input" %>
   <% if @book.errors[:photo_url].any? %>
     <span class="error-text">* <%= @book.errors[:photo_url].join(", ") %> </span>
   <% end %>
   <%= f.label :photo_url, class: "mdl-textfield__label" %>
-</div>
+</div> -->
 
 <div class="mdl-textfield mdl-js-textfield">
 <%= f.text_field :author_id,  class: "mdl-textfield__input"%>
@@ -40,6 +40,10 @@
 <% end %>
   <%= f.label :author_id, class: "mdl-textfield__label" %>
 </div>
+
+<%= form_for @book do |form| %>
+  <%= form.attachment_field :profile_image %>
+<% end %>
 
 <div class="submit">
   <%= f.submit class: "waves-effect waves-light btn" %>
