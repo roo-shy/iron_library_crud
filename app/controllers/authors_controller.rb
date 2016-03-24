@@ -17,8 +17,7 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new
-    @author.first_name = params[:author][:first_name]
-    @author.last_name = params[:author][:last_name]
+    @author.full_name = params[:author][:full_name]
     @author.bio = params[:author][:bio]
     @author.photo_url = params[:author][:photo_url]
 
@@ -31,8 +30,7 @@ class AuthorsController < ApplicationController
 
      def update
      @author = Author.new
-     @author.first_name = params[:author][:first_name]
-     @author.last_name = params[:author][:last_name]
+     @author.full_name = params[:author][:full_name]
      @author.bio = params[:author][:bio]
      @author.photo_url = params[:author][:photo_url]
 
