@@ -25,24 +25,16 @@
   <%= f.label :price, class: "mdl-textfield__label" %>
 </div>
 
-<!-- <div class="">
-  <%= f.label :author_id %>
-  <%= f.collection_select(:author_id, Author.all.order("full_name asc"), :id, :full_name, {prompt: "Select Author"}) %>
-</div> -->
-
-<div class="mdl-textfield mdl-js-textfield">
-<%= f.text_field :author_id,  class: "mdl-textfield__input"%>
-<% if @book.errors[:author_id].any? %>
-  <span class="error-text">* <%= @book.errors[:author_id].join(", ") %> </span>
-<% end %>
-  <%= f.label :author_id, class: "mdl-textfield__label" %>
-</div>
-
 <div class="mdl-textfield mdl-js-textfield">
 <%= f.attachment_field :book_image%>
   <% if @book.errors[:book_image].any? %>
    <span class="mdl-textfield__error">* <%= @book.errors[:book_image].join(", ") %> </span>
  <% end %>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.label :author_id %>
+  <%= f.collection_select :author_id, Author.all.order("full_name asc"), :id, :full_name, {prompt: "Select Author"} %>
 </div>
 
 <div class="submit">
