@@ -6,11 +6,15 @@ var BookList = React.createClass({
     }
   },
 
+  componentWillMount(){
+    this.fetchBooks();
+  },
+
   fetchBooks(){
     var component = this;
     fetch("/api/books.json")
-    .then(function(r){
-      return r.json();
+    .then(function(response){
+      return response.json();
     })
     .then(function(json){
       component.setState({
@@ -19,14 +23,10 @@ var BookList = React.createClass({
     })
   },
 
-  componentDidMount(){
-    this.fetchBooks();
-  },
-
   render: function() {
     return <div>
       {this.state.books.map(function(book){
-        return <img key={book.id} src={book.book_image}/>
+        return <img src={book.book_image}/>
      })}
     </div>;
   }
