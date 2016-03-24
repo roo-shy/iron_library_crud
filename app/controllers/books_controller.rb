@@ -12,6 +12,9 @@ end
     @books = Book.all
   end
 
+  def full_name
+  end
+
   def show
     @book = Book.find_by id: params[:id]
   end
@@ -29,7 +32,7 @@ end
       @book.title = params[:book][:title]
       @book.author_id = params[:book][:author_id]
       @book.price = params[:book][:price]
-      @book.photo_url = params[:book][:photo_url]
+      @book.book_image = params[:book][:book_image]
 
       if @book.save
         redirect_to books_path
@@ -38,23 +41,25 @@ end
       end
     end
 
-    def user_params
-      params.require(:user).permit(:profile_image)
+    def book_params
+      params.require(:book).permit(:title, :book_image, :author_id, :price)
     end
-    
-    def update
 
+
+    def update
         @book = Book.find_by id: params[:id]
         @book.title = params[:book][:title]
         @book.author_id = params[:book][:author_id]
         @book.price = params[:book][:price]
-        @book.photo_url = params[:book][:photo_url]
+        @book.book_image = params[:book][:book_image]
 
         if @book.save
-          redirect_to books_path
-
-        end
-      end
+      # redirect to "/posts"
+        redirect_to book_path(id: @book.id)
+        else
+        render :edit
+     end
+  end
 
       def delete
         @book = Book.find_by id: params[:id]
