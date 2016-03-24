@@ -1,7 +1,7 @@
 if Book.count == 0
-  Book.create title: "Peek-a-Boo, I Love You!", photo_url: "http://rcdn-2.fishpond.com.au/0002/892/265/13183057/6.jpeg", price: 6.47, author_id: 1
-  Book.create title: "Giraffes Can't Dance", photo_url: "http://images.scholastic.co.uk/assets/a/4b/ab/126126-ml-193728.jpg", price: 4.24, author_id: 2
-  Book.create title: "May I Please Have a Cookie?", photo_url: "http://www.jemorris.com/covers/cookie400.jpg", price: 3.25, author_id: 3
+  Book.create title: "Peek-a-Boo, I Love You!", price: 6.47, author_id: 1
+  Book.create title: "Giraffes Can't Dance", price: 4.24, author_id: 2
+  Book.create title: "May I Please Have a Cookie?", price: 3.25, author_id: 3
 end
 
 if Author.count == 0
