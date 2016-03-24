@@ -26,7 +26,7 @@ var BookList = React.createClass({
   render: function() {
     return <div>
       {this.state.books.map(function(book){
-        return <img src={book.book_image}/>
+        return <img src={book.image_url}/>
      })}
     </div>;
   }
