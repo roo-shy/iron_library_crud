@@ -9,20 +9,13 @@
 
 <%= form_for @author do |f| %>
 
-<div class="mdl-textfield mdl-js-textfield">
-  <%= f.text_field :first_name, class: "mdl-textfield__input" %>
-  <% if @author.errors[:first_name].any? %>
-    <span class="error-text">* <%= @author.errors[:name].join(", ") %> </span>
-  <% end %>
-  <%= f.label :first_name, class: "mdl-textfield__label" %>
-</div>
 
 <div class="mdl-textfield mdl-js-textfield">
-  <%= f.text_field :last_name, class: "mdl-textfield__input" %>
-  <% if @author.errors[:last_name].any? %>
+  <%= f.text_field :full_name, class: "mdl-textfield__input" %>
+  <% if @author.errors[:full_name].any? %>
     <span class="error-text">* <%= @author.errors[:name].join(", ") %> </span>
   <% end %>
-  <%= f.label :last_name, class: "mdl-textfield__label" %>
+  <%= f.label :full_name, class: "mdl-textfield__label" %>
 </div>
 
 <div class="mdl-textfield mdl-js-textfield">
