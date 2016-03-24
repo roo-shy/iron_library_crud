@@ -6,7 +6,7 @@ var BookList = React.createClass({
     }
   },
 
-  componentWillMount(){
+  componentDidMount(){
     this.fetchBooks();
   },
 
@@ -23,11 +23,18 @@ var BookList = React.createClass({
     })
   },
 
+  HandleRefresh(event){
+   event.preventDefault();
+   this.fetchBooks()
+ },
+
   render: function() {
     return <div>
-      {this.state.books.map(function(book){
+    {this.state.books.map(function(book){
         return <img src={book.image_url}/>
      })}
+       <button onClick={this.HandleRefresh}>Refresh</button>
+
     </div>;
   }
 });

@@ -4,6 +4,6 @@ belongs_to :author
 validates :title, :author_id, :price, presence: true
 validates_format_of :price, :with => /\A\d+(?:\.\d{0,2})?\z/
 
-attachment :book_image
+attachment :image_url
 
 end

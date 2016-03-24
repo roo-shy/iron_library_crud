@@ -32,7 +32,7 @@ end
       @book.title = params[:book][:title]
       @book.author_id = params[:book][:author_id]
       @book.price = params[:book][:price]
-      @book.book_image = params[:book][:book_image]
+      @book.image_url = params[:book][:image_url]
 
       if @book.save
         redirect_to books_path
@@ -42,7 +42,7 @@ end
     end
 
     def book_params
-      params.require(:book).permit(:title, :book_image, :author_id, :price)
+      params.require(:book).permit(:title, :image_url, :author_id, :price)
     end
 
 
@@ -51,7 +51,7 @@ end
         @book.title = params[:book][:title]
         @book.author_id = params[:book][:author_id]
         @book.price = params[:book][:price]
-        @book.book_image = params[:book][:book_image]
+        @book.image_ur = params[:book][:image_url]
 
         if @book.save
       # redirect to "/posts"
