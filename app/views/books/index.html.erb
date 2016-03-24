@@ -15,7 +15,10 @@
           <div class="demo-card-square mdl-card mdl-shadow--2dp" style="max-width: 100%;">
           <%= image_tag attachment_url(book, :book_image, :fill, 300, 400, format: "jpg") %>
             <div class="mdl-card__supporting-text"><%= link_to book.title, book_path(id: book.id) %>
+              <%= book.author.full_name%>
+
            </div>
+
             <div class="mdl-card__actions mdl-card--border">
               <strong style="padding-right: 10px;">
                 <%= number_to_currency(book.price) %></strong>
@@ -23,8 +26,7 @@
 
             </div>
           </div>
-            <% end %>
-
+         <% end %>
 
 
          </div>
