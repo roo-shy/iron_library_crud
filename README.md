@@ -14,4 +14,4 @@ See below samples of the web app:
 
 # React + Rails
 
-![My image](/Screen Shot 2016-03-25 at 1.51.23 PM.png?raw=true))
+![My image](/screenshots/Screen Shot 2016-03-25 at 1.51.23 PM.png?raw=true))
