@@ -26,7 +26,7 @@
 </div>
 
 <div class="mdl-textfield mdl-js-textfield">
-<%= f.attachment_field :book_image%>
+<%= f.attachment_field :book_image %>
   <% if @book.errors[:book_image].any? %>
    <span class="mdl-textfield__error">* <%= @book.errors[:book_image].join(", ") %> </span>
  <% end %>

@@ -6,11 +6,7 @@ var BookList = React.createClass({
     }
   },
 
-  componentWillMount(){
-    this.fetchBooks();
-  },
-
-  fetchBooks(){
+  _fetchBooks(){
     var component = this;
     fetch("/api/books.json")
     .then(function(response){
@@ -23,11 +19,33 @@ var BookList = React.createClass({
     })
   },
 
+  _clickIt(event){
+      event.preventDefault();
+      this._fetchBooks()
+      console.log("Refresh")
+    },
+
+  componentDidMount(){
+      this._fetchBooks();
+  },
+
   render: function() {
-    return <div>
-      {this.state.books.map(function(book){
-        return <img src={book.image_url}/>
-     })}
-    </div>;
+    console.log(this.state.books)
+
+    return (
+      <div>
+        {this.state.books.map(function(book){
+          return (
+            <div>
+              <h3 className="warning">{book.title}</h3>
+              <img src={book.image_url}/>
+              <hr/>
+
+            </div>
+          )
+       })}
+      <button onClick={this._clickIt}>Refresh</button>
+     </div>
+   )
   }
 });

@@ -1,3 +1,5 @@
+require 'pp'
+
 class BooksController < ApplicationController
 
   before_action do
@@ -28,11 +30,10 @@ end
   end
 
   def create
-      @book = Book.new
-      @book.title = params[:book][:title]
-      @book.author_id = params[:book][:author_id]
-      @book.price = params[:book][:price]
-      @book.book_image = params[:book][:book_image]
+      
+      pp params
+
+      @book = Book.new(book_params)
 
       if @book.save
         redirect_to books_path

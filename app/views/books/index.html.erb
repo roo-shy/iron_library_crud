@@ -11,7 +11,7 @@
 
         <% @books.each do |book| %>
 
-        <div class="col s12 s6 l4">
+        <div class="col s12 m6 l4">
           <div class="demo-card-square mdl-card mdl-shadow--2dp" style="max-width: 100%;">
           <%= image_tag attachment_url(book, :book_image, :fill, 300, 400, format: "jpg") %>
             <div class="mdl-card__supporting-text"><%= link_to book.title, book_path(id: book.id) %>
@@ -26,16 +26,15 @@
 
             </div>
           </div>
+        </div>
+
          <% end %>
 
 
-         </div>
         </div>
 
 
       </div>
-
-    </div>
 
   </body>
 </html>
