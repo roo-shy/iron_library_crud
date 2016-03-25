@@ -19,7 +19,7 @@ var BookList = React.createClass({
     })
   },
 
-  _clickIt(event){
+  _clickRefresh(event){
       event.preventDefault();
       this._fetchBooks()
       console.log("Refresh")
@@ -33,19 +33,21 @@ var BookList = React.createClass({
     console.log(this.state.books)
 
     return (
-      <div>
+
+  <div className="react_display">
         {this.state.books.map(function(book){
           return (
             <div>
-              <h3 className="warning">{book.title}</h3>
+              <h4>{book.title}</h4>
               <img src={book.image_url}/>
-              <hr/>
-
             </div>
           )
        })}
-      <button onClick={this._clickIt}>Refresh</button>
-     </div>
+
+    <div className="react_button">
+      <button onClick={this._clickRefresh} className="waves-effect waves-light btn">Refresh</button>
+    </div>
+  </div>
    )
   }
 });

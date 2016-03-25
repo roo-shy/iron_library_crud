@@ -1,5 +1,6 @@
 .container{
   display: flex;
+  display: inline-block;
 }
 
 .column{
@@ -30,4 +31,17 @@
 
 .btn{
   margin-top:20px;
+}
+
+.react_display{
+  padding:60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.react_button{
+  margin-top:250px;
+  padding-left: 40px;
 }
