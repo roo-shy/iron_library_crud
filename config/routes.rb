@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'sign_out' => 'session#delete', as: :sign_out
   root 'homepage#show'
 
+  get 'orders' => 'orders#index', as: :orders
+  get 'orders/:id' => 'orders#show', as: :order
+
   get '/register' => 'registration#new', as: :new_user
   post '/register' => 'registration#create', as: :users
 
