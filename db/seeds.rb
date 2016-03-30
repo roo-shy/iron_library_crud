@@ -1,7 +1,7 @@
 if Book.count == 0
-  Book.create title: "Peek-a-Boo, I Love You!", price: 6.47, author_id: 1
-  Book.create title: "Giraffes Can't Dance", price: 4.24, author_id: 2
-  Book.create title: "May I Please Have a Cookie?", price: 3.25, author_id: 3
+  Book.create title: "Peek-a-Boo, I Love You!", price: 6.47, author_id: 1, book_image: ("#{Rails.root}/app/assets/images/61eRsjavz4L._SX258_BO1,204,203,200_.jpg")
+  Book.create title: "Giraffes Can't Dance", price: 4.24, author_id: 2, book_image: ("#{Rails.root}/app/assets/images/765148.jpg")
+  Book.create title: "May I Please Have a Cookie?", price: 3.25, author_id: 3, book_image: ("#{Rails.root}/app/assets/images/cookie400.jpg")
 end
 
 if Author.count == 0
