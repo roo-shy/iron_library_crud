@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
 
-
   before_action do
     if @current_user.nil?
       redirect_to sign_in_path
@@ -30,7 +29,7 @@ class CartsController < ApplicationController
        order.save!
       end
 
-     order_item = OrderItem.find_by order_id: order.id, book_id: book.id
+     order_item = OrderItem.find_by order_id: order.id, book_id: @book.id
      if oreder_item.present?
        order_item.quantity = order_item.quantity + 1
      else
@@ -48,8 +47,7 @@ class CartsController < ApplicationController
 
     end
     def view
-    # 
-    # @order = Order.find_by status: 'cart', user_id: @current_user.id
+    @order = Order.find_by status:'cart', user_id: @current_user.id
 
     end
   end
