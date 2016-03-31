@@ -21,6 +21,7 @@
               <strong style="padding-right: 10px;">
                 <%= number_to_currency(book.price) %></strong>
                <%= link_to 'Edit', edit_book_path(id: book.id), class: "waves-effect waves-light btn" %>
+                <%= link_to 'Add to Cart', add_to_cart_path(book_id: book.id), class: 'btn', method: :post %>
                <%= link_to 'Your Orders', orders_path, class: "waves-effect waves-light btn" %>
                <%= link_to 'Your Cart', cart_path, class: "waves-effect waves-light btn" %>
             </div>

@@ -3,11 +3,11 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
  def total_price
-    order_items.map {|order_item| order_item.total_price }.sum
+    order_items.map{|order_item|order_item.total_price}.sum
  end
 
  def description
-  "Order ##{id}. #{order_items.map {|oi| oi.product.name}.join(", ")}"
+  "Order ##{id}. #{order_items.map {|oi| oi.book.name}.join(", ")}"
  end
 
  def total_price_in_cents
