@@ -1,0 +1,47 @@
+<div class="column">
+  <div class="row">
+    <div class="col s12 m5">
+      <h3><%= @current_user.name %>'s cart</h3>
+      <% if @order %>
+      <% @order.order_items.each do |order_item| %>
+      <hr>
+      <ul>
+        <li>Title:
+          <%= order_item.book.title %></li>
+        <li>Quantity:
+          <%= order_item.quantity %></li>
+        <li>Total Price:
+          <%= number_to_currency order_item.total_price %></li>
+        <li><%= link_to 'Remove from Cart', remove_from_cart_path(book_id: order_item.book_id), class: "waves-effect waves-light btn", method: :delete %></li>
+      </ul>
+      <% end %>
+
+      <hr>
+      <h6>Order Total:
+        <%= number_to_currency @order.total_price %></h6>
+      <div class="">
+        <% if @order.order_items.present? %>
+        <%= form_tag process_payment_path, method: :post, id: "payment-form" do %>
+
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="pk_test_FAAFPeTPKfbQYSENXEJJnRTV"
+          data-name="The Iron Library"
+          data-description="<%= @order.description %>"
+          data-amount="<%= @order.total_price_in_cents %>"
+          data-email="<%= @current_user.email %>"
+          data-shipping-address="true"
+          data-locale="auto"></script>
+
+        <% end %>
+      <% else %>
+        <%= link_to 'Keep Shopping', root_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to 'Keep Shopping', root_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+      <% end %>
+    </div>
+  </div>
+</div>
