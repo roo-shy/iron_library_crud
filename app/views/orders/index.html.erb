@@ -1,4 +1,7 @@
-<h1>Orders</h1>
+<div class="column">
+  <div class="row">
+    <div class="col s12 m5">
+      <h1>Orders</h1>
 <table>
   <thead>
     <tr>
@@ -23,7 +26,7 @@
           <%= order.id %>
         </td>
         <td>
-          <%= order.user.username %>
+          <%= order.user_id%>
         </td>
         <td class="accounting">
           <%= number_to_currency order.total_price %>
@@ -35,3 +38,6 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
+</div>

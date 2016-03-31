@@ -7,7 +7,7 @@ class Order < ActiveRecord::Base
  end
 
  def description
-  "Order ##{id}. #{order_items.map {|oi| oi.book.name}.join(", ")}"
+  "Order ##{id}. #{order_items.map {|oi| oi.book_id}.join(", ")}"
  end
 
  def total_price_in_cents

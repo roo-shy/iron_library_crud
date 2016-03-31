@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'cart' => 'carts#view', as: :cart
   post 'cart' => 'carts#add_to_cart', as: :add_to_cart
   delete 'cart' => 'carts#remove_from_cart', as: :remove_from_cart
+  post 'checkout' => 'carts#process_payment', as: :process_payment
 
   get 'orders' => 'orders#index', as: :orders
   get 'orders/:id' => 'orders#show', as: :order
