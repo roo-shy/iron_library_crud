@@ -7,9 +7,9 @@
       <li><%= link_to 'Author List', authors_path %></li>
       <li><%= link_to 'New Author', new_author_path %></li>
      <% if @current_user %>
-        <li>  <%= link_to "Sign Out", sign_out_path %></li>
+        <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
-        <li>   <%= link_to "Sign In", sign_in_path %></li> 
+        <li><%= link_to "Sign In", sign_in_path %></li>
         <% end %>
     </ul>
   </div>
