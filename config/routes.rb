@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'sign_out' => 'session#delete', as: :sign_out
   root 'homepage#show'
 
+  get 'cart' => 'carts#view', as: :cart
+  post 'cart' => 'carts#add_to_cart', as: :add_to_cart
+  delete 'cart' => 'carts#remove_from_cart', as: :remove_from_cart
+
   get 'orders' => 'orders#index', as: :orders
   get 'orders/:id' => 'orders#show', as: :order
 

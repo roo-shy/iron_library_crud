@@ -48,8 +48,8 @@ class CartsController < ApplicationController
 
     end
     def view
-
-    @order = Order.find_by status: 'cart', user_id: @current_user.id
+    # 
+    # @order = Order.find_by status: 'cart', user_id: @current_user.id
 
     end
   end
