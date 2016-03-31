@@ -1,7 +1,7 @@
 if Book.count == 0
-  Book.create title: "Peek-a-Boo, I Love You!", price: 6.47, author_id: 1, book_image: ("#{Rails.root}/app/assets/images/61eRsjavz4L._SX258_BO1,204,203,200_.jpg")
-  Book.create title: "Giraffes Can't Dance", price: 4.24, author_id: 2, book_image: ("#{Rails.root}/app/assets/images/765148.jpg")
-  Book.create title: "May I Please Have a Cookie?", price: 3.25, author_id: 3, book_image: ("#{Rails.root}/app/assets/images/cookie400.jpg")
+  Book.create title: "Peek-a-Boo, I Love You!", price: 6.47, author_id: 1, book_image:("#{Rails.root}/app/assets/images/61eRsjavz4L._SX258_BO1,204,203,200_.jpg"), inventory: 70
+  Book.create title: "Giraffes Can't Dance", price: 4.24, author_id: 2, book_image:("#{Rails.root}/app/assets/images/765148.jpg"), inventory: 58
+  Book.create title: "May I Please Have a Cookie?", price: 3.25, author_id: 3, book_image:("#{Rails.root}/app/assets/images/cookie400.jpg"), inventory: 100
 end
 
 if Author.count == 0
@@ -20,4 +20,20 @@ if Author.count == 0
   She also wrote and illustrated, May I Please Have a Cookie? and Please Write Back! both featuring Alfie
   the Alligator. To learn more or download free activity and coloring pages that accompany Jennifer's books, visit www.jemorris.com",
   photo_url:"http://cps-static.rovicorp.com/3/JPG_400/MI0001/328/MI0001328712.jpg?partner=allrovi.com"
+end
+
+if Order.count == 0
+  order = Order.new
+  order.user = "kelly"
+  order.status = 'closed'
+  order.purchased_at = 5.days.ago
+  order.save!
+
+  book_line_item = OrderItem.new
+  book_line_item.order = order
+  book_line_item.price = book.price
+  book_line_item.shipping_cost = 0
+  book_line_item.quantity = 1
+  book_line_item.save!
+
 end
