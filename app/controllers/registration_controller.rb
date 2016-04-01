@@ -8,6 +8,7 @@ class RegistrationController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    respond_to do |format|
     @user.name = params[:user][:name]
     @user.email = params[:user][:email]
     @user.password = params[:user][:password]
