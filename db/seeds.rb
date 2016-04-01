@@ -58,7 +58,7 @@ if Book.count == 0
   book = Book.new
   book.title = "Oliver's Travels"
   book.price = 8.25
-  book.author_id = 1
+  book.author_id = 3
   book.inventory = 25
   url = "http://static.guim.co.uk/sys-images/Media/Pix/pictures/2009/9/1/1251821939758/Olivers-Travels---book-to-006.jpg"
   open(url, "rb") do |file|
