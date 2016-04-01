@@ -1,4 +1,5 @@
 require "test_helper"
+require 'open-uri'
 
 class CanSignInTest < Capybara::Rails::TestCase
 
