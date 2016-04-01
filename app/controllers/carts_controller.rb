@@ -33,17 +33,17 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
-    def remove_from_cart
-       @order = Order.find_by status: 'cart', user_id: @current_user.id
-       @book = Book.find_by id: params[:book_id]
+   def remove_from_cart
+     @order = Order.find_by status: 'cart', user_id: @current_user.id
+     @book = Book.find_by id: params[:book_id]
 
-       # how do I find the order_item
-       order_item = OrderItem.find_by order_id: @order.id, book_id: @book.id
-       order_item.destroy
-       redirect_to cart_path
-   end
+     # how do I find the order_item
+     order_item = OrderItem.find_by order_id: @order.id, book_id: @book.id
+     order_item.destroy
+     redirect_to cart_path
+  end
 
-    def view
+  def view
     @order = Order.find_by status:'cart', user_id: @current_user.id
     end
 
@@ -65,7 +65,6 @@ class CartsController < ApplicationController
     )
 
     @order.update status: 'pending'
-
     redirect_to receipt_path(id: @order.id)
     end
 

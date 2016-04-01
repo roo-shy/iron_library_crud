@@ -8,8 +8,8 @@ class SessionController < ApplicationController
     # get the object
     @user = User.find_by email: email
     # set the values
-    if @user.password == password
-      session[:user_id] = @user.id
+    if @user && @user.authenticate(password)
+     session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
