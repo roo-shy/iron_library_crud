@@ -14,19 +14,15 @@
             <%= image_tag attachment_url(book, :book_image, :fill, 300, 400, format: "jpg") %>
             <div class="mdl-card__supporting-text"><%= link_to book.title, book_path(id: book.id) %>
               <%= book.author.full_name%>
-
-            </div>
-
-            <div class="mdl-card__actions mdl-card--border">
               <strong style="padding-right: 10px;">
                 <ul>
-                  <li><%= number_to_currency(book.price) %></strong>
+                <li><%= number_to_currency(book.price) %></strong>
                 </li>
                 <li><%= link_to 'Edit', edit_book_path(id: book.id), class: "waves-effect waves-light btn" %></li>
                 <li><%= link_to 'Add to Cart', add_to_cart_path(book_id: book.id), class: 'btn', method: :post %></li>
                 <li><%= link_to 'Your Cart', cart_path, class: "waves-effect waves-light btn" %></li>
               </ul>
-            </div>
+             </div>
           </div>
         </div>
 
