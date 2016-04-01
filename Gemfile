@@ -63,4 +63,3 @@ gem 'refile-postgres'
 gem 'react-rails', '~> 1.0'
 gem 'stripe'
 gem 'local_time'
-gem "figaro"
