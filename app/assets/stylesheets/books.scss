@@ -3,21 +3,13 @@
   display: inline-block;
 }
 
-.column{
-  padding: 50px;
-}
-
-.mdl-card__title{
-  margin-top: 20px;
-}
-
 .demo-card-square.mdl-card {
   width: 350px;
   margin: 40px;
 }
 
 .mdl-card__supporting-text {
-  margin-top: 10px;
+  margin-top: 5px;
   padding:10px;
 }
 
@@ -25,12 +17,9 @@
   min-height: 350px;
 }
 
-.submit{
-  padding-top: 60px;
-}
 
 .btn{
-  margin-top:20px;
+  margin-top:10px;
 }
 
 .react_display{
