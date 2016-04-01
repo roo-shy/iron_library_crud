@@ -60,3 +60,4 @@ gem "refile-mini_magick"
 gem 'refile-postgres'
 
 gem 'react-rails', '~> 1.0'
+gem 'stripe'

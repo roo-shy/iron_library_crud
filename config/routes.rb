@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   patch 'authors/:id' => 'authors#update'
   delete 'authors/:id' => 'authors#delete'
 
+  get 'receipt/:id' => 'carts#receipt', as: :receipt
+
   namespace :api do
      get 'books' => 'books#index', as: :books
   end

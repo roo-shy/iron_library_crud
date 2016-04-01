@@ -34,11 +34,11 @@ class CartsController < ApplicationController
   end
 
     def remove_from_cart
-       order = Order.find_by status: 'cart', user_id: @current_user.id
+       @order = Order.find_by status: 'cart', user_id: @current_user.id
        @book = Book.find_by id: params[:book_id]
 
        # how do I find the order_item
-       order_item = OrderItem.find_by order_id: order.id, book_id: @book.id
+       order_item = OrderItem.find_by order_id: @order.id, book_id: @book.id
        order_item.destroy
        redirect_to cart_path
    end
@@ -47,11 +47,15 @@ class CartsController < ApplicationController
     @order = Order.find_by status:'cart', user_id: @current_user.id
     end
 
+    def start
+      @order = Order.find_by status: 'cart', user_id: @current_user.id
+    end
+
     def process_payment
     @order = Order.find_by status: 'cart', user_id: @current_user.id
 
     card_token = params[:stripeToken]
-    # Stripe.api_key = ""
+    Stripe.api_key = "sk_test_nS1fPRl8hr8ALmJydiCFejvd"
 
     Stripe::Charge.create(
       :amount => @order.total_price_in_cents,
@@ -63,6 +67,11 @@ class CartsController < ApplicationController
     @order.update status: 'pending'
 
     redirect_to receipt_path(id: @order.id)
-   end
+    end
+
+    def receipt
+       # I want a 404 if we can't find_by
+       @order = Order.find_by! id: params[:id], user_id: @current_user.id
+     end
 
   end
