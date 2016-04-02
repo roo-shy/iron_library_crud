@@ -22,10 +22,24 @@ $primary-color:#26A69A;
   background-repeat: no-repeat;
 }
 
-.material-icons {
-text-rendering: optimizeLegibility;
-}
 
 select {
   display: block;
+}
+
+
+.react_display{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+   .thumbnail{
+     padding:10px;
+     margin-left:-200px;
+   }
+}
+
+.react_button{
+  margin-top:250px;
+  padding-left: 40px;
 }

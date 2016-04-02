@@ -37,8 +37,7 @@ var BookList = React.createClass({
   <div className="react_display">
         {this.state.books.map(function(book){
           return (
-            <div>
-              <h4>{book.title}</h4>
+            <div className="thumbnail">
               <img src={book.image_url}/>
             </div>
           )
