@@ -13,6 +13,8 @@ class CanSignInTest < Capybara::Rails::TestCase
     fill_in "Email", with: "bob@example.com"
     fill_in "Password", with: "12345678"
     click_button "Sign In"
+    save_and_open_page
+
 
     assert_content page, "Sign Out"
  end

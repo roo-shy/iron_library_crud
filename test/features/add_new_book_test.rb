@@ -1,7 +1,6 @@
 require "test_helper"
 
 class AddNewBookTest < Capybara::Rails::TestCase
-
   setup do
 
       Author.create! full_name: "Jeff Kinney", bio: "Jeffrey Patrick Kinney is an American game designer, cartoonist,
@@ -10,18 +9,7 @@ class AddNewBookTest < Capybara::Rails::TestCase
       User.create! name: "Bob", email: "bob@example.com", password: "12345678"
     end
   test "can add new book" do
-    def log_in_as(user, options = {})
-      password    = options[:password]    || 'password'
-      remember_me = options[:remember_me] || '1'
-      if integration_test?
-        post login_path, session: { name:       user.name,
-                                    email:       user.email,
-                                    password:    password,
-                                    remember_me: remember_me }
-      else
-        session[:user_id] = user.id
-      end
-    end
+
       visit root_path
       click_link "New Book"
 
@@ -33,11 +21,11 @@ class AddNewBookTest < Capybara::Rails::TestCase
       within("#new_book") do
         fill_in "Title", with: "Diary of a Whimpy Kid"
         fill_in "Price", with: "8.51"
-        fill_in "Photo url", with: "http://jzool-prd.s3.amazonaws.com/img/15759/m.jpg?1318396983"
-        fill_in "Author", with: "Jeff Kinney"
+        attach_file("Book image", "#{Rails.root}/test/fixtures/765148.jpg")
+        select("Jeff Kinney", from: "Author")
         click_button "Create Book"
       end
       assert_content page, "Diary of a Whimpy Kid"
-      # save_and_open_page
+      save_and_open_page
     end
   end

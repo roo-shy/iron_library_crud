@@ -54,6 +54,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+# group :test do
+#   gem 'email_spec'
+# end
+
 gem 'materialize-sass'
 
 gem "refile", require: "refile/rails"
