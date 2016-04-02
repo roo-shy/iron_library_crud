@@ -8,20 +8,14 @@
 <div class="column">
       <div class="row">
         <div class="col s12 m5">
-          <div class="card">
+
             <div class="demo-card-square mdl-card mdl-shadow--2dp" style: "width: 500px;">
               <%= image_tag attachment_url(@book, :book_image, :fill, 300, 400, format: "jpg") %>
-       </div>
-            <span class="card-title"><%= @book.title %>
-            <%= @author_id %></span>
-            </div>
-            <div class="card-content">
-
-            </div>
-            <div class="card-action">
+              <h5><span class="card-title"><%= @book.title %></h5>
+                <h6><%= @book.author.full_name%></span></h6>
               <%= link_to 'Edit', edit_book_path, class: "waves-effect waves-light btn"  %>
             </div>
+
           </div>
         </div>
       </div>
-</div>
