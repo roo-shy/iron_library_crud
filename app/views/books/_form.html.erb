@@ -26,6 +26,7 @@
 </div>
 
 <div class="mdl-textfield mdl-js-textfield">
+  <%= f.label :book_image %>
 <%= f.attachment_field :book_image %>
   <% if @book.errors[:book_image].any? %>
    <span class="mdl-textfield__error">* <%= @book.errors[:book_image].join(", ") %> </span>
@@ -33,8 +34,8 @@
 </div>
 
 <div class="mdl-textfield mdl-js-textfield">
+<%= f.collection_select :author_id, Author.all.order("full_name asc"), :id, :full_name, {prompt: "Select Author"} %>
   <%= f.label :author_id %>
-  <%= f.collection_select :author_id, Author.all.order("full_name asc"), :id, :full_name, {prompt: "Select Author"} %>
 </div>
 
 <div class="submit">
