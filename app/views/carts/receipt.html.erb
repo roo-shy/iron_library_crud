@@ -3,7 +3,8 @@
     <div class="col s12 m5">
       <h4>Thank you for your purchase
         <%= @order.id%></h4>
-      <%= image_tag attachment_url(@book, :book_image, :fill, 300, 400, format: "jpg") %>
+      <% @order.order_items.each do |order_item| %>
+      <%= image_tag attachment_url(order_item.book, :book_image, :fill, 300, 400, format: "jpg") %>
       <ul>
         <li>
           <strong>Purchase Date</strong>:
@@ -12,7 +13,7 @@
         <ul>
           <li>Order ID:
             <%= @order.description %></li>
-          <% @order.order_items.each do |order_item| %>
+
           <li>Title:
             <%= order_item.book.title %></li>
           <li>Quantity:
