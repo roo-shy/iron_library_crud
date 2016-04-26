@@ -6,7 +6,6 @@
       <li><%= link_to 'New Book', new_book_path %></li>
       <li><%= link_to 'Author List', authors_path %></li>
       <li><%= link_to 'New Author', new_author_path %></li>
-      <li><%= link_to 'Your Cart', cart_path %></li>
      <% if @current_user %>
         <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
