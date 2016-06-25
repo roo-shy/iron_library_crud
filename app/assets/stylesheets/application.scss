@@ -9,9 +9,14 @@ $primary-color:#26A69A;
 .nav-wrapper{
  background-color: $primary-color;
   a{
-    padding-left: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    padding-right: 80px;
   }
+
+  .brand-logo{
+    padding-left: 50px;
+  }
+
 }
 
 
