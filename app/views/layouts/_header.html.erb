@@ -1,15 +1,22 @@
 <nav>
   <div class="nav-wrapper">
     <%= link_to 'Iron Library', root_path, class: 'brand-logo' %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to 'Book List', books_path %></li>
-      <li><%= link_to 'New Book', new_book_path %></li>
-      <li><%= link_to 'Author List', authors_path %></li>
-      <li><%= link_to 'New Author', new_author_path %></li>
+
+    <button id="demo-menu-lower-left"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+
+<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-left">
+      <li><%= link_to 'Book List', books_path, class: "mdl-menu__item" %></li>
+      <li><%= link_to 'New Book', new_book_path, class: "mdl-menu__item" %></li>
+      <li><%= link_to 'Author List', authors_path, class: "mdl-menu__item" %></li>
+      <li><%= link_to 'New Author', new_author_path, class: "mdl-menu__item" %></li>
      <% if @current_user %>
-        <li><%= link_to "Sign Out", sign_out_path %></li>
+        <li><%= link_to "Sign Out", sign_out_path, class: "mdl-menu__item"  %></li>
         <% else %>
-        <li><%= link_to "Sign In", sign_in_path %></li>
+        <li><%= link_to "Sign In", sign_in_path, class: "mdl-menu__item"  %></li>
         <% end %>
     </ul>
   </div>
