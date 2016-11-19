@@ -1,9 +1,4 @@
-#IronLibrary: Basic CRUD
-
-My web app manage (CRUD) a collection of books for kids.
-A user can add, update and delete book, author and his bio. You can navigate through the menu in order add, update new
-or existing book. Each book has got title, price and the author name. Book title would redirect you to the book detail page (the book picture size will be properly sized).
-An author list navigation button will bring you to the list of authors from where you can enter an individual page for each author. (authors images will be modified soon as well).
+#CRUD Application with React and API
 
 See below samples of the web app:
 
