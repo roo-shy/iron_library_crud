@@ -1,2 +1,2 @@
-## CRUD Rails App with React and API
+## CRUD Rails App on React using API
 
